@@ -34,7 +34,7 @@
     </script>
     <script type="text/javascript" src="https://www.radiobells.com/script/v2_1.js" charset="UTF-8"></script>
 
-    <body bgcolor="#00ff00">
+    <body bgcolor="#ffffff">
         <h1 align="center"> Мова HTML </h1>
 
         <h2>Історія мови</h2>
@@ -73,63 +73,16 @@
 
 
 
-                        <?php
+                        <!--PLAYER - Блок расположения плеера. Плееры: default, lite, energy или custom (свой плеер) (можно несколько) -->
+                        <div id="my_player" class="my_player" data-player="energy" data-skin="green" data-width=200 data-autoplay=1 data-volume=70 data-streamurl="https://myradio24.org/nazarik"></div>
+                        <!--END PLAYER-->
 
-                        //получаем данные информера и сохраняем в кеш
-                        //10 секундный кеш не будет нагружать наш сервер
-                        $win1251=0; //1 - чтобы использовать кодировку 1251
-                        $revert=1; //0 или 1 - сортировка последних песен
-                        $cachefile="cachenazarik.json";
-                        if(!ini_get("allow_url_fopen")) echo "<font color=red>Please enable allow_url_fopen!</font><br>";
-                        if(@filemtime($cachefile)<time()-10) { 
-                        $informer=@file_get_contents("http://myradio24.com/users/nazarik/status.json");
-                        file_put_contents($cachefile,$informer);
-                        }
-                        
-                        //читаем данные информера из кеш файла (если надо, меняем кодировку)
-                        $informer=(array)json_decode(file_get_contents($cachefile));
-                        if($win1251) array_walk_recursive($informer,function(&$v) {$v=@iconv("utf-8","windows-1251//TRANSLIT",$v);});
-                        
-                        //вывод структуры полей (в ссылке добавить ?get=print)
-                        if($_GET[get]=="print") echo "<pre>".print_r($informer,true)."</pre>";
-                        
-                        //вывод информации в формате JSON (в ссылке добавить ?get=json)
-                        if($_GET[get]=="json") echo json_encode($informer);
-                        
-                        //вывод информации в формате JSONP (в ссылке добавить ?get=jsonp)
-                        if($_GET[get]=="jsonp") echo "var informer=".json_encode($informer).";";
-                        
-                        //вывод информации в HTML (параметр get не указан)
-                        if(!$_GET[get])  {
-                        echo "<b>Общая информация</b><br><br>
-                        <table>
-                        <tr><td>Станция:</td><td>{$informer[title]}</td></tr>
-                        <tr><td>Песня:</td><td>{$informer[song]}</td></tr>
-                        <tr><td>Следующая:</td><td>{$informer[nextsongs][0]}</td></tr>
-                        <tr><td>Вещает DJ:</td><td>{$informer[djname]}</td></tr>
-                        <tr><td>Качество:</td><td>{$informer[kbps]} kbps</td></tr>
-                        <tr><td>Слушателей:</td><td><b>{$informer[listeners]}</b></td></tr>
-                        <tr><td>Пик слушателей:</td><td>{$informer[plisteners]}</td></tr>
-                        <tr><td>Исполнитель:</td><td>{$informer[artist]}</td></tr>
-                        <tr><td colspan=2><img src=http://myradio24.com/{$informer[img]} width=300 border=0></td></tr>
-                        </table><br>
-                        <b>Статистика DJ's</b><br><br>";
-                        if(!count($informer[rank])) echo "Ничего не найдено.<br><br>";
-                        else { 
-                            echo "<table><tr><td>Ведущий</td><td>Рейтинг</td><td>Вещаний</td><td>Онлайн</td></tr>";
-                            for($i=0;$i<count($informer[rank]);$i++) echo "<tr><td>DJ {$informer[rank][$i][0]}</td><td align=center>{$informer[rank][$i][1]}</td><td align=center>{$informer[rank][$i][3]}</td><td align=right>{$informer[rank][$i][2]} часов</td></tr>";
-                            echo "</table><br>";
-                        }
-                        $lastsongs="";
-                        for($i=0;$i<count($informer[songs]);$i++) {
-                            $str="<tr><td>{$informer[songs][$i][0]}</td><td>{$informer[songs][$i][1]}</td></tr>"; 
-                            if($revert) $lastsongs=$str.$lastsongs; else $lastsongs.=$str; 
-                        }
-                        echo "<b>Последние песни</b><br><br>
-                        <table>$lastsongs</table>";
-                        }
-                        
-                        ?>
+                        <!--VISUALIZER - Блок расположения визуализации. Цвета: rgb, red, blue или green  (можно несколько) -->
+                        <canvas class="my_visualizer" width=320 height=128 data-size=64 data-revert=0 data-color="rgb"></canvas>
+                        <!--END VISUALIZER-->
+
+                        <!--Этот скрипт должен располагаться в самом низу после всех блоков и не должен повторяться на странице. -->
+                        <script src="//myradio24.com/player/player.js?v3.17" data-port="nazarik" data-interval=15 data-vmid=0></script>
     </body>
 
 </html>
