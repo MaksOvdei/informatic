@@ -4,6 +4,7 @@ body {
 
 div#button {
     text-align: center;
+    size: 11px;
 }
 
 A:Link {
