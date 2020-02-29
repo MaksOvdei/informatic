@@ -35,118 +35,116 @@
 
 <body>
 
-    <body bgcolor="#000000">
+
+    <!--Часы с календарем-->
+    <SCRIPT LANGUAGE="JavaScript">
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var timeValue = "" + ((hours > 12) ? hours - 12 : hours)
+        timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+        timeValue += (hours >= 12) ? " P.M." : " A.M."
+        timerRunning = true;
 
 
-        <!--Часы с календарем-->
-        <SCRIPT LANGUAGE="JavaScript">
-            var now = new Date();
-            var hours = now.getHours();
-            var minutes = now.getMinutes();
-            var timeValue = "" + ((hours > 12) ? hours - 12 : hours)
-            timeValue += ((minutes < 10) ? ":0" : ":") + minutes
-            timeValue += (hours >= 12) ? " P.M." : " A.M."
-            timerRunning = true;
+        mydate = new Date();
+        myday = mydate.getDay();
+        mymonth = mydate.getMonth();
+        myweekday = mydate.getDate();
+        weekday = myweekday;
+        myyear = mydate.getYear();
+        year = myyear
+
+        if (myday == 0)
+            day = " Воскресенье, "
+
+        else if (myday == 1)
+            day = " Понедельник, "
+
+        else if (myday == 2)
+            day = " Вторник, "
+
+        else if (myday == 3)
+            day = " Среда, "
+
+        else if (myday == 4)
+            day = " Четверг, "
+
+        else if (myday == 5)
+            day = " Пятница, "
+
+        else if (myday == 6)
+            day = " Суббота, "
+
+        if (mymonth == 0)
+            month = "Январь "
+
+        else if (mymonth == 1)
+            month = "Февраль "
+
+        else if (mymonth == 2)
+            month = "Март "
+
+        else if (mymonth == 3)
+            month = "Апрель "
+
+        else if (mymonth == 4)
+            month = "Maй "
+
+        else if (mymonth == 5)
+            month = "Июнь "
+
+        else if (mymonth == 6)
+            month = "Июль "
+
+        else if (mymonth == 7)
+            month = "Август "
+
+        else if (mymonth == 8)
+            month = "Сентябрь "
+
+        else if (mymonth == 9)
+            month = "Октябрь "
+
+        else if (mymonth == 10)
+            month = "Ноябрь "
+
+        else if (mymonth == 11)
+            month = "Декабрь"
+
+        document.write("<B><P ALIGN=RIGHT><FONT SIZE=-1 FACE=VERDANA,ARIAL>" + timeValue + " | " + day + month);
+        document.write(myweekday + "," + " " + year + "</FONT></B><BR><HR WIDTH=300 ALIGN=RIGHT><P>");
+    </SCRIPT>
 
 
-            mydate = new Date();
-            myday = mydate.getDay();
-            mymonth = mydate.getMonth();
-            myweekday = mydate.getDate();
-            weekday = myweekday;
-            myyear = mydate.getYear();
-            year = myyear
+    <!--Конец "Часы с календарем"-->
 
-            if (myday == 0)
-                day = " Воскресенье, "
-
-            else if (myday == 1)
-                day = " Понедельник, "
-
-            else if (myday == 2)
-                day = " Вторник, "
-
-            else if (myday == 3)
-                day = " Среда, "
-
-            else if (myday == 4)
-                day = " Четверг, "
-
-            else if (myday == 5)
-                day = " Пятница, "
-
-            else if (myday == 6)
-                day = " Суббота, "
-
-            if (mymonth == 0)
-                month = "Январь "
-
-            else if (mymonth == 1)
-                month = "Февраль "
-
-            else if (mymonth == 2)
-                month = "Март "
-
-            else if (mymonth == 3)
-                month = "Апрель "
-
-            else if (mymonth == 4)
-                month = "Maй "
-
-            else if (mymonth == 5)
-                month = "Июнь "
-
-            else if (mymonth == 6)
-                month = "Июль "
-
-            else if (mymonth == 7)
-                month = "Август "
-
-            else if (mymonth == 8)
-                month = "Сентябрь "
-
-            else if (mymonth == 9)
-                month = "Октябрь "
-
-            else if (mymonth == 10)
-                month = "Ноябрь "
-
-            else if (mymonth == 11)
-                month = "Декабрь"
-
-            document.write("<B><P ALIGN=RIGHT><FONT SIZE=-1 FACE=VERDANA,ARIAL>" + timeValue + " | " + day + month);
-            document.write(myweekday + "," + " " + year + "</FONT></B><BR><HR WIDTH=300 ALIGN=RIGHT><P>");
-        </SCRIPT>
+    <!-- Плеер РАДМИР РАДИО-->
 
 
-        <!--Конец "Часы с календарем"-->
+    <!--PLAYER - Блок расположения плеера. Плееры: default, lite, energy или custom (свой плеер) (можно несколько) -->
+    <div id="my_player" class="my_player" data-player="energy" data-skin="red" data-width=200 data-autoplay=1 data-volume=100 data-streamurl="https://myradio24.org/nazarik"></div>
+    <!--END PLAYER-->
 
-        <!-- Плеер РАДМИР РАДИО-->
-
-
-        <!--PLAYER - Блок расположения плеера. Плееры: default, lite, energy или custom (свой плеер) (можно несколько) -->
-        <div id="my_player" class="my_player" data-player="energy" data-skin="red" data-width=200 data-autoplay=1 data-volume=100 data-streamurl="https://myradio24.org/nazarik"></div>
-        <!--END PLAYER-->
-
-        <!--Конец плеера-->
+    <!--Конец плеера-->
 
 
 
-        <p>
-            <a href="/lesson/lesson.html">
-                <font>Об HTML</font>
-            </a>
-        </p>
+    <p>
+        <a href="lesson/lesson.html">
+            <font>Об HTML</font>
+        </a>
+    </p>
 
 
 
 
 
 
-        <!--Скрипт радио!НЕ ПЕРЕМЕЩАТЬ!-->
-        <!--Этот скрипт должен располагаться в самом низу после всех блоков и не должен повторяться на странице. -->
-        <script src="//myradio24.com/player/player.js?v3.17" data-port="nazarik" data-interval=15 data-vmid=0></script>
-        <!--Конец скрипта радио-->
-    </body>
+    <!--Скрипт радио!НЕ ПЕРЕМЕЩАТЬ!-->
+    <!--Этот скрипт должен располагаться в самом низу после всех блоков и не должен повторяться на странице. -->
+    <script src="//myradio24.com/player/player.js?v3.17" data-port="nazarik" data-interval=15 data-vmid=0></script>
+    <!--Конец скрипта радио-->
+</body>
 
 </html>
