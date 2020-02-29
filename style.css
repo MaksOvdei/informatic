@@ -1,10 +1,8 @@
 p {
-    color: #ffffff;
+    text-align: center;
 }
 
-h1,
-h2,
-h3 {
-    text-align: center;
-    color: #ffffff;
+font {
+    color: rgb(128, 0, 0);
+    size: 5px;
 }
