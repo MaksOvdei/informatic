@@ -3,83 +3,176 @@
 
 <head>
     <metacharset="UTF-8">
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <Style>
+            A:Link {
+                Color: #000000;
+                Text-decoration: underline
+            }
+            
+            A:Visited {
+                Color: #000000;
+                Text-decoration: underline
+            }
+            
+            A:Hover {
+                Color: #000000;
+                Text-decoration: none
+            }
+            
+            td,
+            body {
+                font-family: verdana, arial, helvetica;
+                font-size: 11px;
+            }
+        </Style>
         <title>Мой сайт</title>
         <link rel="stylesheet" href="style.css">
 
 
 
-
-        <script type="text/javascript">
-            function startTime() {
-                var tm = new Date();
-                var h = tm.getHours();
-                var m = tm.getMinutes();
-                var s = tm.getSeconds();
-                m = checkTime(m);
-                s = checkTime(s);
-                document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
-                t = setTimeout('startTime()', 500);
-            }
-
-            function checkTime(i) {
-                if (i < 10) {
-                    i = "0" + i;
-                }
-                return i;
-            }
-        </script>
 </head>
 
 <body>
 
-    <body onload="startTime()">
-        <p id="txt"> </p>
-
-        <body bgcolor="#000000">
-            <h1> Мова HTML </h1>
-
-            <h2>Історія мови</h2>
 
 
-            <img src="Tim_Berners-Lee.jpg" width="100" align="left">
+    <body bgcolor="#000000">
+        <h1> Мова HTML </h1>
+
+        <h2>Історія мови</h2>
 
 
-            <p align="justify">
-                Опис мови HTML вперше був запропонований у 1991 році британським вченим Тімом Бернерс-Лі (нар. у 1955 р.). У документі з назвою http://info.cern.ch/hypertext/WWW/MarkUp/Tags.html <a href ?? "http://info.cern.
+        <img src="Tim_Berners-Lee.jpg" width="100" align="left">
+
+
+        <p align="justify">
+            Опис мови HTML вперше був запропонований у 1991 році британським вченим Тімом Бернерс-Лі (нар. у 1955 р.). У документі з назвою http://info.cern.ch/hypertext/WWW/MarkUp/Tags.html <a href ?? "http://info.cern.
       ch/hypertext/WWW/MarkUp/Tags.html"> HTML Tags </a> містився опис перших 20 тегів для розмітки документів. Тринадцять із тих тегів існують ще й досі у мові HTML.
-            </p>
+        </p>
 
-            <p align="justify">
-                У 1994 році <b>Тім Бернерс-Лі</b> заснував <b>Консорціум Всесвітньої павутини W3C</b> (англ. World Wide Web Consortium – консорціум всесвітньої павутини), який очолює до сьогодні. Консорціум займається розробкою і впровадженням стандартів
-                для Інтернету, у тому числі затверджує специфікацію мови НТМL. У 2014 році був рекомендований стандарт п’ятої версії мови – <i>HTML5</i>.
+        <p align="justify">
+            У 1994 році <b>Тім Бернерс-Лі</b> заснував <b>Консорціум Всесвітньої павутини W3C</b> (англ. World Wide Web Consortium – консорціум всесвітньої павутини), який очолює до сьогодні. Консорціум займається розробкою і впровадженням стандартів
+            для Інтернету, у тому числі затверджує специфікацію мови НТМL. У 2014 році був рекомендований стандарт п’ятої версії мови – <i>HTML5</i>.
 
-            </p>
-            <hr>
-
-
-
-            <h2>Основні поняття</h2>
-
-
-            <p align="justify">
-                <font color="blue" size="5"> Тег </font> - це команда браузеру, яка вказує, яким чином повинен бути відображений той чи інший фрагмент коду.
-            </p>
-
-
-            <p align="justify">
-                <font color="blue" size="5"> Контент </font> - це текст та нетекстові об'єкти (графічні зображення, анімація, відео та ін.), що відображаються на веб-сторінці та призначені для перегляду відвідувачами веб-сторінки.
-            </p>
+        </p>
+        <hr>
 
 
 
+        <h2>Основні поняття</h2>
 
 
-            <!--PLAYER - Блок расположения плеера. Плееры: default, lite, energy или custom (свой плеер) (можно несколько) -->
-            <div id="my_player" class="my_player" data-player="energy" data-skin="red" data-width=200 data-autoplay=1 data-volume=100 data-streamurl="https://myradio24.org/nazarik"></div>
-            <!--END PLAYER-->
+        <p align="justify">
+            <font color="blue" size="5"> Тег </font> - це команда браузеру, яка вказує, яким чином повинен бути відображений той чи інший фрагмент коду.
+        </p>
 
-            <!--Этот скрипт должен располагаться в самом низу после всех блоков и не должен повторяться на странице. -->
-            <script src="//myradio24.com/player/player.js?v3.17" data-port="nazarik" data-interval=15 data-vmid=0></script>
-        </body>
+
+        <p align="justify">
+            <font color="blue" size="5"> Контент </font> - це текст та нетекстові об'єкти (графічні зображення, анімація, відео та ін.), що відображаються на веб-сторінці та призначені для перегляду відвідувачами веб-сторінки.
+        </p>
+
+
+
+
+        <!-- Плеер РАДМИР РАДИО-->
+
+
+        <!--PLAYER - Блок расположения плеера. Плееры: default, lite, energy или custom (свой плеер) (можно несколько) -->
+        <div id="my_player" class="my_player" data-player="energy" data-skin="red" data-width=200 data-autoplay=1 data-volume=100 data-streamurl="https://myradio24.org/nazarik"></div>
+        <!--END PLAYER-->
+
+        <!--Этот скрипт должен располагаться в самом низу после всех блоков и не должен повторяться на странице. -->
+        <script src="//myradio24.com/player/player.js?v3.17" data-port="nazarik" data-interval=15 data-vmid=0></script>
+
+
+        <!--Конец плеера-->
+
+
+
+        <!--Часы с календарем-->
+        <SCRIPT LANGUAGE="JavaScript">
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var timeValue = "" + ((hours > 12) ? hours - 12 : hours)
+            timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+            timeValue += (hours >= 12) ? " P.M." : " A.M."
+            timerRunning = true;
+
+
+            mydate = new Date();
+            myday = mydate.getDay();
+            mymonth = mydate.getMonth();
+            myweekday = mydate.getDate();
+            weekday = myweekday;
+            myyear = mydate.getYear();
+            year = myyear
+
+            if (myday == 0)
+                day = " Воскресенье, "
+
+            else if (myday == 1)
+                day = " Понедельник, "
+
+            else if (myday == 2)
+                day = " Вторник, "
+
+            else if (myday == 3)
+                day = " Среда, "
+
+            else if (myday == 4)
+                day = " Четверг, "
+
+            else if (myday == 5)
+                day = " Пятница, "
+
+            else if (myday == 6)
+                day = " Суббота, "
+
+            if (mymonth == 0)
+                month = "Январь "
+
+            else if (mymonth == 1)
+                month = "Февраль "
+
+            else if (mymonth == 2)
+                month = "Март "
+
+            else if (mymonth == 3)
+                month = "Апрель "
+
+            else if (mymonth == 4)
+                month = "Maй "
+
+            else if (mymonth == 5)
+                month = "Июнь "
+
+            else if (mymonth == 6)
+                month = "Июль "
+
+            else if (mymonth == 7)
+                month = "Август "
+
+            else if (mymonth == 8)
+                month = "Сентябрь "
+
+            else if (mymonth == 9)
+                month = "Октябрь "
+
+            else if (mymonth == 10)
+                month = "Ноябрь "
+
+            else if (mymonth == 11)
+                month = "Декабрь"
+
+            document.write("<B><P ALIGN=RIGHT><FONT SIZE=-1 FACE=VERDANA,ARIAL>" + timeValue + " | " + day + month);
+            document.write(myweekday + "," + " " + year + "</FONT></B><BR><HR WIDTH=300 ALIGN=RIGHT><P>");
+        </SCRIPT>
+
+
+        <!--Конец "Часы с календарем"-->
+
+    </body>
 
 </html>
