@@ -6,24 +6,3 @@ div#button {
     text-align: center;
     size: 11px;
 }
-
-A:Link {
-    Color: #ffffff;
-    Text-decoration: underline
-}
-
-A:Visited {
-    Color: #ffffff;
-    Text-decoration: underline
-}
-
-A:Hover {
-    Color: #ffffff;
-    Text-decoration: none
-}
-
-td,
-body {
-    font-family: verdana, arial, helvetica;
-    font-size: 11px;
-}
