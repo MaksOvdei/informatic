@@ -1,8 +1,11 @@
-body {
+    body {
     background-color: black;
 }
 
 div#button {
     text-align: center;
-    size: 11px;
+    size: 20px;
 }
+
+font {
+    color: white;
