@@ -4,29 +4,7 @@
 <head>
     <metacharset="UTF-8">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <Style>
-            A:Link {
-                Color: #000000;
-                Text-decoration: underline
-            }
-            
-            A:Visited {
-                Color: #000000;
-                Text-decoration: underline
-            }
-            
-            A:Hover {
-                Color: #000000;
-                Text-decoration: none
-            }
-            
-            td,
-            body {
-                font-family: verdana, arial, helvetica;
-                font-size: 11px;
-            }
-        </Style>
+
         <title>Мой сайт</title>
         <link rel="stylesheet" href="style.css">
 
@@ -37,88 +15,7 @@
 <body>
 
 
-    <!--Часы с календарем-->
-    <SCRIPT LANGUAGE="JavaScript">
-        var now = new Date();
-        var hours = now.getHours();
-        var minutes = now.getMinutes();
-        var timeValue = "" + ((hours > 12) ? hours - 12 : hours)
-        timeValue += ((minutes < 10) ? ":0" : ":") + minutes
-        timeValue += (hours >= 12) ? " P.M." : " A.M."
-        timerRunning = true;
 
-
-        mydate = new Date();
-        myday = mydate.getDay();
-        mymonth = mydate.getMonth();
-        myweekday = mydate.getDate();
-        weekday = myweekday;
-        myyear = mydate.getYear();
-        year = myyear
-
-        if (myday == 0)
-            day = " Воскресенье, "
-
-        else if (myday == 1)
-            day = " Понедельник, "
-
-        else if (myday == 2)
-            day = " Вторник, "
-
-        else if (myday == 3)
-            day = " Среда, "
-
-        else if (myday == 4)
-            day = " Четверг, "
-
-        else if (myday == 5)
-            day = " Пятница, "
-
-        else if (myday == 6)
-            day = " Суббота, "
-
-        if (mymonth == 0)
-            month = "Январь "
-
-        else if (mymonth == 1)
-            month = "Февраль "
-
-        else if (mymonth == 2)
-            month = "Март "
-
-        else if (mymonth == 3)
-            month = "Апрель "
-
-        else if (mymonth == 4)
-            month = "Maй "
-
-        else if (mymonth == 5)
-            month = "Июнь "
-
-        else if (mymonth == 6)
-            month = "Июль "
-
-        else if (mymonth == 7)
-            month = "Август "
-
-        else if (mymonth == 8)
-            month = "Сентябрь "
-
-        else if (mymonth == 9)
-            month = "Октябрь "
-
-        else if (mymonth == 10)
-            month = "Ноябрь "
-
-        else if (mymonth == 11)
-            month = "Декабрь"
-
-        document.write("<B><P ALIGN=RIGHT><FONT SIZE=-1 FACE=VERDANA,ARIAL>" + timeValue + " | " + day + month);
-        document.write(myweekday + "," + " " + year + "</FONT></B><BR><HR WIDTH=300 ALIGN=RIGHT><P>");
-    </SCRIPT>
-
-
-    <!--Конец "Часы с календарем"-->
 
     <!-- Плеер РАДМИР РАДИО-->
 
