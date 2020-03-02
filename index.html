@@ -42,6 +42,7 @@
     <!--Конец плеера-->
 
 
+
     <div id="button">
         <p>
             <a href="lesson/lesson.html">Об HTML</a>
@@ -54,6 +55,52 @@
 
 
 
+
+
+    <!--Мой плеер-->
+
+
+
+    <!--PLAYER - Блок расположения плеера. Плееры: default, lite, energy или custom (свой плеер) (можно несколько) -->
+    <div id="my_player" class="my_player" data-player="energy" data-skin="green" data-width=200 data-autoplay=1 data-volume=100 data-streamurl="https://myradio24.org/maksovdei"></div>
+    <!--END PLAYER-->
+
+    <!--VISUALIZER - Блок расположения визуализации. Цвета: rgb, red, blue или green  (можно несколько) -->
+    <canvas class="my_visualizer" width=320 height=128 data-size=64 data-revert=0 data-color="rgb"></canvas>
+    <!--END VISUALIZER-->
+
+    <!--TABLE - Блок расположения стола заказов. -->
+    <b>Стол заказов</b> (в очереди <b class=my_table_turn>0</b>)<br><br>
+    <style>
+        #my_table_on,
+        #my_table_auto {
+            display: none;
+        }
+    </style>
+    <div id=my_table_off>Сейчас заказы не принимаются.</div>
+    <div id=my_table_auto>
+        <a href="https://myradio24.com/?to=table&port=maksovdei" target=_blank><input type=button value="Заказать музыку к исполнению"></a>
+    </div>
+    <div id=my_table_on>
+        <form id=my_table_form action="" method=post accept-charset="UTF-8">
+            <input type=text id=my_table_from maxlength=30 value="" placeholder="От кого*">
+            <input type=text id=my_table_for maxlength=30 value="" placeholder="Для кого">
+            <br>
+            <input type=text id=my_table_artist maxlength=50 value="" placeholder="Исполнитель*">
+            <input type=text id=my_table_song maxlength=50 value="" placeholder="Название трека*">
+            <br>
+            <textarea id=my_table_comment cols=50 rows=3 maxlength=500 placeholder="Ваш комментарий"></textarea><br> * - поля обязательные для заполнения<br>
+            <input type=submit value="Заказать музыку к исполнению">
+        </form>
+    </div><br>
+    <!--END TABLE-->
+
+
+
+    <!--Конец моего плеера-->
+
+    <!--Этот скрипт должен располагаться в самом низу после всех блоков и не должен повторяться на странице. -->
+    <script src="//myradio24.com/player/player.js?v3.17" data-port="maksovdei" data-interval=15 data-vmid=0></script>
 
 
     <!--Скрипт радио!НЕ ПЕРЕМЕЩАТЬ!-->
