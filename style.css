@@ -6,3 +6,9 @@
         text-align: center;
         size: 35px;
     }
+    
+    div#clock {
+        align-content: center;
+        text-align: center;
+        ruby-align: center;
+    }
